@@ -15,7 +15,9 @@ def create_person_list(people: list) -> list:
         people_class_list.append(Person(person["name"], person["age"]))
     for i in range(len(people)):
         if people[i].get("husband") is not None:
-            people_class_list[i].husband = Person.people.get(people[i].get("husband"))
+            hsb = Person.people.get(people[i].get("husband"))
+            people_class_list[i].husband = hsb
         if people[i].get("wife") is not None:
-            people_class_list[i].wife = Person.people.get(people[i].get("wife"))        
+            wf = Person.people.get(people[i].get("wife"))
+            people_class_list[i].wife = wf
     return people_class_list
